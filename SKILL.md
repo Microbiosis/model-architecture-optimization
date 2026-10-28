@@ -17,6 +17,7 @@ Agent harness 只在用户明确要求时作为次级分支。
 - **代码变了 ≠ 效果改善。** 只报告实际观察和真实执行过的检查；未运行写“未运行”，不写成通过。
 - **不能只用相对比较下结论。** 任何“A 比 B 好 x%”都要先过平凡基线；没有可比实测不宣称提升。
 - **产物看起来正常 ≠ 它出自那次运行。** 宣称前先确认血缘（`code_sha` / 判据指纹 / 网格完备）。
+- **结果好得反常时先查 bug。** 比值精确等于 1.000、各组几乎相同、多个分辨率完全一致——真实的量几乎不会这样。先跑纯噪声基线，再信结果。
 
 本技能原创内容采用 [Apache-2.0](LICENSE)，版权署名 `Copyright 2026 Microbiosis`。引用、复制、改编或分发外部项目内容前，先读[第三方项目与许可证说明](references/third-party-licenses.md)；本技能的许可不替代第三方各自条款。
 
@@ -40,6 +41,8 @@ Agent harness 只在用户明确要求时作为次级分支。
 | --- | --- |
 | 要宣称“改完更好”，或已有相对增益待审计 | [提升声明的审计](references/measurement-audits.md) |
 | 手上有 `metrics.json`，要判断它能不能作为依据 | [证据完整性](references/evidence-integrity.md) |
+| 结果**好得反常**（比值 1.000 / 各组几乎相同 / 几个分辨率完全一致） | [测量陷阱清单](references/measurement-pitfalls.md)——见到"完美"先查 bug |
+| 数字对但结论不稳：跨组比较、结构是否可复现 | [测量陷阱清单](references/measurement-pitfalls.md) §B–§D |
 | 架构变了要适配旧权重 / 出现 `missing_keys` | [权重语义兼容性](references/checkpoint-compatibility.md) + [审计矩阵](templates/checkpoint-audit-matrix.md) |
 | 涉及分布式、量化、KV cache、导出/编译 | [框架路径指引](references/implementation-paths.md) |
 | 要选实现方案、或想参考同类项目的工程模式 | [相关项目实践](references/related-projects.md)（仅作设计参考，不是最优性证明） |
