@@ -41,4 +41,4 @@
 
 ## 审计与预登记文件的来源
 
-[提升声明的审计](../references/measurement-audits.md) 与 [预登记模板](../templates/audit-preregistration.md) 的案例数字与工程教训来自作者自有项目（`Microbiosis/hetero-moe`）的实测记录，不含第三方源码、权重或数据，也不改变本文件的第三方许可结论。
+[让声明站得住](../references/claims.md) 与 [预登记模板](../templates/audit-preregistration.md) 的案例数字与工程教训来自作者自有项目（`Microbiosis/hetero-moe`）的实测记录，不含第三方源码、权重或数据，也不改变本文件的第三方许可结论。
