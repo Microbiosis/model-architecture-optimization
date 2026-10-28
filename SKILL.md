@@ -41,6 +41,7 @@ Agent harness 只在用户明确要求时作为次级分支。
 | --- | --- |
 | 要宣称“改完更好”，或已有相对增益待审计 | [提升声明的审计](references/measurement-audits.md) |
 | 手上有 `metrics.json`，要判断它能不能作为依据 | [证据完整性](references/evidence-integrity.md) |
+| 要把结论做成**别人无法反驳**（自检 / 参照系 / 零分布 / 等价性） | [让结论不可辩驳](references/trustworthy-claims.md) |
 | 结果**好得反常**（比值 1.000 / 各组几乎相同 / 几个分辨率完全一致） | [测量陷阱清单](references/measurement-pitfalls.md)——见到"完美"先查 bug |
 | 数字对但结论不稳：跨组比较、结构是否可复现 | [测量陷阱清单](references/measurement-pitfalls.md) §B–§D |
 | 架构变了要适配旧权重 / 出现 `missing_keys` | [权重语义兼容性](references/checkpoint-compatibility.md) + [审计矩阵](templates/checkpoint-audit-matrix.md) |
@@ -50,7 +51,16 @@ Agent harness 只在用户明确要求时作为次级分支。
 | 交付前 | [交付清单](templates/delivery-audit-checklist.md) |
 | 需要可复现的最小夹具 | [夹具模板](templates/fixture-template.md) |
 
-两份审计 reference 的分工：**measurement-audits 管“增益是不是假的”**（伪影、基线、尺子、探针）；**evidence-integrity 管“产物是不是那次运行的”**（血缘、闸门、判据可执行化）。两者都过不了时，先说清是哪一层。
+四份 reference 的分工：
+
+| 文档 | 管的问题 | 姿态 |
+| --- | --- | --- |
+| [提升声明的审计](references/measurement-audits.md) | 增益是不是假的 | 防错 |
+| [证据完整性](references/evidence-integrity.md) | 产物是不是那次运行的 | 防错 |
+| [测量陷阱清单](references/measurement-pitfalls.md) | 对照做对了为何还会错（32 条实录） | 防错 |
+| [让结论不可辩驳](references/trustworthy-claims.md) | 怎么把结论做硬（自检/参照系/零分布/等价性） | **建信** |
+
+前三份是防守，最后一份是进攻。只做防守会得到"什么都没证明"。
 
 ## 六步
 
